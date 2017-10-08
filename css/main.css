@@ -231,6 +231,7 @@ a.underline-light:after { border-color: rgba(255, 255, 255, 0.2); }
   padding: 10px;
   cursor: pointer;
   -webkit-filter: grayscale(80%);
+  max-width: 281px;
 }
 .card:hover,
 .card:focus {
@@ -251,6 +252,7 @@ a.underline-light:after { border-color: rgba(255, 255, 255, 0.2); }
   height: 100vh;
   top: 0; left: 0;
   background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 .card-overlay--visible {
   display: block;
@@ -267,6 +269,8 @@ a.underline-light:after { border-color: rgba(255, 255, 255, 0.2); }
   width: 95vw;
   max-width: 80vw;
   background-color: black;
+  cursor: auto;
+  height: 250px;
 }
 
 /* Try to conserve some battery on mobile */
@@ -324,7 +328,7 @@ a.underline-light:after { border-color: rgba(255, 255, 255, 0.2); }
 .project-cat5 { background-image:url('../img/projects/cat5.gif'); }
 .project-spacecat { background-image:url('../img/projects/spacecat.gif'); }
 .project-bub { background-image:url('../img/projects/bub.gif'); }
-.project-tldw { background-image:url('../img/projects/tldw.png'); background-position: left; }
+.project-treebie { background-image:url('../img/projects/treebie.png'); background-position: left; }
 .project-gruup { background-image:url('../img/projects/gruup.png'); background-position: left; }
 .project-saman { background-image:url('../img/projects/saman.gif'); }
 .project-pokedate { background-image:url('../img/projects/pokedate.png'); }

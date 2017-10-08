@@ -111,6 +111,18 @@
       <div class="portoflio-cards">
 
         <div class="card">
+            <div class="card-image project-treebie"></div>
+            <div class="description-long">
+              <b>Treebie</b> is a database for thoughtful cannabis product reviews. Made in a couple weekends w/ Rails, Treebie generates simple server-rendered content pages for all manufacuturers, products, and reviews entered into the database.<br>
+              <div class="description-links">
+                <a target="_blank" class="no-underline" href="https://www.treebie.xyz?ref=spenser.xyz">
+                  <button>treebie.xyz</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        <div class="card">
           <div class="card-image project-magehand"></div>
           <div class="description-long">
             <b>Magehand</b> is a mobile-focused web app designed to share tabletop RPG data in real-time with folks sitting around the gaming table.
@@ -228,20 +240,6 @@
         </div>
 
         <div class="card">
-          <div class="card-image project-tldw"></div>
-          <div class="description-long">
-            <b>TLDW (too long, didn't watch) Movies</b> is a web-app I built to teach myself Rails, where you review movies in 140-characters or less. It ties into themoviedb API for images, title suggestions, etc.<br>
-            <i>(Sleeping on Heroku)</i>
-
-            <div class="description-links">
-              <a target="_blank" class="no-underline" href="https://tldwmovies.com">
-                <button>tldwmovies.com</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
           <div class="card-image project-saman"></div>
           <div class="description-long">
             <b>Saman</b> is an experimental (and confusing) arcade-style game with incremental elements.
@@ -302,17 +300,12 @@
     var cards = document.querySelectorAll('.card');
     var overlay = document.querySelectorAll('.card-overlay')[0];
     Array.prototype.forEach.call(cards, function(card, i){
+
       card.onclick=function(){
-
-        if (Array.prototype.indexOf.call(this.classList, 'card--full') == -1){
-          card.classList.add('card--full');
-          overlay.classList.add('card-overlay--visible');
-        } else {
-          card.classList.remove('card--full');
-          overlay.classList.remove('card-overlay--visible');
-        };
-
+        card.classList.add('card--full');
+        overlay.classList.add('card-overlay--visible');
       };
+
     });
 
     overlay.onclick=function(){
