@@ -73,6 +73,10 @@ a:after {
   width: 100%;
   bottom: 1px; left: 0;
 }
+a.featured {
+  color: #d79bff;
+}
+
 a.no-underline:after { border: 0; }
 a.underline-light:after { border-color: rgba(255, 255, 255, 0.2); }
 
@@ -239,18 +243,45 @@ a.underline-light:after { border-color: rgba(255, 255, 255, 0.2); }
   background-size: cover;
 }
 
-.card--full {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
-  min-width: 94%;
-  -webkit-filter: grayscale(0%);
+.card-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  top: 0; left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
 }
+.card-overlay--visible {
+  display: block;
+}
+
+.card--full {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 0 auto;
+  width: 95vw;
+  max-width: 80vw;
+  background-color: black;
+}
+
+/* Try to conserve some battery on mobile */
+@media screen and (max-width:599px) {
+  .card--full {
+    flex-direction: column;
+    height: 400px;
+    max-width: 95vw;
+  }
+  .card--full .description-long {
+    padding: 1rem 1rem;
+    padding-bottom: 40px;
+  }
+}
+
 .card--full > .card-image {
   min-width: 30%;
 }

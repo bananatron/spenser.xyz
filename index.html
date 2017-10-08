@@ -61,9 +61,8 @@
         <h2>I love building things.</h2>
         <p>
           I've been working with the web for many moons and take pride in crafting rad experiences.
-          Previously at <a target="_blank" href="https://hired.com/x/dyJFMw">Hired</a>, I'm currently
-          working with <a target="_blank" href="http://www.knack.com">Knack</a> on product, design,
-          and development to help folks build amazing apps and empower their data.
+          Previously at <a target="_blank" href="https://hired.com/x/dyJFMw">Hired</a> & <a target="_blank" href="http://www.knack.com?ref=spenser.xyz">Knack</a>, 
+          I'm currently working with <a target="_blank" href="https://sendwyre.com?ref=spenser.xyz">Wyre</a>, where we utelize blockchain technology to send money around the world.
           <button class="show-background">More About Me</button>
       </div>
 
@@ -107,7 +106,7 @@
 
 
     <section class="portfolio">
-      <h3>Solo Projects <span class="open-all">(*)</span></h3>
+      <h3>Solo Projects</h3>
 
       <div class="portoflio-cards">
 
@@ -137,7 +136,7 @@
             near you.
             <br>
             <button>
-              <a target="_blank" href="https://www.producthunt.com/tech/pokedate">
+              <a target="_blank" class="featured" href="https://www.producthunt.com/tech/pokedate">
                 Featured on ProductHunt!
               </a>
             </button>
@@ -203,7 +202,7 @@
             <b>Lil' Trump</b> is a tiny weekend project, simulating the tamagotchi experience with some <i>prediential</i> flair.
             <br>
             <button>
-              <a target="_blank" href="https://www.producthunt.com/posts/lil-trump">
+              <a target="_blank" class="featured" href="https://www.producthunt.com/posts/lil-trump">
                 Featured on ProductHunt!
               </a>
             </button>
@@ -280,6 +279,7 @@
     </section>
 
   </div>
+  <div class="card-overlay"></div>
   <div class="body-color"></div>
 
 
@@ -298,25 +298,31 @@
       document.querySelectorAll('.interests')[0].style.display = "block";
     };
 
-    // Card expansion funcionality (can prob also do this with CSS checkboxes)
+    // Card expansion
     var cards = document.querySelectorAll('.card');
+    var overlay = document.querySelectorAll('.card-overlay')[0];
     Array.prototype.forEach.call(cards, function(card, i){
-      card.onclick=function(ee){
+      card.onclick=function(){
 
         if (Array.prototype.indexOf.call(this.classList, 'card--full') == -1){
           card.classList.add('card--full');
+          overlay.classList.add('card-overlay--visible');
         } else {
           card.classList.remove('card--full');
+          overlay.classList.remove('card-overlay--visible');
         };
 
       };
     });
 
-    document.querySelectorAll('.open-all')[0].onclick=function(){
-      cards.forEach(function(card) {
-        card.click()
-      })
-    };
+    overlay.onclick=function(){
+
+      Array.prototype.forEach.call(cards, function(card, i){
+        card.classList.remove('card--full');
+      });
+
+      overlay.classList.remove('card-overlay--visible');
+    }
 
     var console_style = "font-size: 14px; color:#DA2598; font-family:'monospace';"
        console.log("%cHey there", "color: black; font-family: 'monospace'; font-size: 26px; font-weight: 800;");
